@@ -1,3 +1,4 @@
+// src/pages/LetterMakePage/LetterMakePage.jsx
 import React, { useState } from "react";
 import * as S from "./styled";
 import { LetterOne } from "@components/Letters/LetterOne";
