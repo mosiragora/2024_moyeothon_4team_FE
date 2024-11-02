@@ -1,3 +1,4 @@
+// src/pages/LetterMakePage/LetterMakePage.jsx
 import React, { useState } from "react";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +27,13 @@ export const LetterMakePage = () => {
   const handlePrevStep = () => setCurrentStep((prev) => prev - 1);
 
   const handleSubmit = () => {
-    if (!letterContent || !receiverInfo.year || !receiverInfo.monthDay || !receiverInfo.time || !receiverInfo.phoneNumber) {
+    if (
+      !letterContent ||
+      !receiverInfo.year ||
+      !receiverInfo.monthDay ||
+      !receiverInfo.time ||
+      !receiverInfo.phoneNumber
+    ) {
       toast.error("모든 필수 정보를 입력해 주세요!"); // 토스트 알림 표시
       return;
     }
@@ -42,7 +49,9 @@ export const LetterMakePage = () => {
 
   return (
     <S.Wrapper>
-      <S.MakeLetter onClick={() => setCurrentStep(1)}>편지 작성하기</S.MakeLetter>
+      <S.MakeLetter onClick={() => setCurrentStep(1)}>
+        편지 작성하기
+      </S.MakeLetter>
 
       {currentStep === 1 && (
         <LetterOne
